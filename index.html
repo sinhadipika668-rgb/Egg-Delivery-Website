@@ -1,0 +1,54 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Egg Trader</title>
+<style>
+body{font-family:Arial;margin:0;background:#fff8e8;color:#333}
+header{background:#f5b800;padding:25px;text-align:center}
+section{padding:20px;text-align:center}
+.card{background:white;padding:20px;margin:15px auto;max-width:450px;border-radius:12px;box-shadow:0 2px 8px #ccc}
+input,select{padding:12px;margin:7px;width:85%;box-sizing:border-box}
+button{background:#16833b;color:white;border:0;padding:13px 22px;border-radius:8px;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+<h1>🥚 Rahul Egg Trader</h1>
+<p>Fresh Eggs • Best Quality • Home Delivery</p>
+</header>
+<section>
+<h2>Welcome to Our Egg Shop</h2>
+<div class="card">
+<h2>🥚 Fresh Eggs</h2>
+<p>Contact us for today's price and bulk orders.</p>
+</div>
+<div class="card">
+<h2>Place Your Order</h2>
+<form onsubmit="orderEggs(event)">
+<input id="name" placeholder="Your Name" required>
+<input id="phone" type="tel" placeholder="Your Mobile Number" required>
+<input id="address" placeholder="Delivery Address" required>
+<select id="quantity">
+<option value="30 eggs">30 Eggs</option>
+<option value="60 eggs">60 Eggs</option>
+<option value="90 eggs">90 Eggs</option>
+<option value="Tray order">Full Tray / Bulk Order</option>
+</select>
+<button type="submit">Order on WhatsApp</button>
+</form>
+</div>
+</section>
+<script>
+function orderEggs(e){
+e.preventDefault();
+let msg="Egg Order%0AName: "+encodeURIComponent(document.getElementById('name').value)
++"%0APhone: "+encodeURIComponent(document.getElementById('phone').value)
++"%0AAddress: "+encodeURIComponent(document.getElementById('address').value)
++"%0AQuantity: "+encodeURIComponent(document.getElementById('quantity').value);
+window.open("https://wa.me/917004292338?text="+msg,"_blank");
+}
+</script>
+</body>
+</html>
